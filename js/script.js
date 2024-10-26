@@ -36,7 +36,7 @@
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
-    const targetArticle = clickedElement.querySelector('href');
+    const targetArticle = document.querySelector(articleSelector);
     console.log(targetArticle);
 
     /* [DONE] add class 'active' to the correct article */
