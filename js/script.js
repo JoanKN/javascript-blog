@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-inner-declarations */
 //document.getElementById('test-button').addEventListener('click', function(){
 //const links = document.querySelectorAll('.titles a');
 //console.log('links:', links);
@@ -82,7 +84,8 @@
     }
   }
   generateTitleLinks();
-  function generateTags() {
+
+  function generateTags(){
     /* find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
     /* START LOOP: for every article: */
@@ -116,7 +119,7 @@
   }
   generateTags();
 
-  function tagClickHandler(event) {
+  function tagClickHandler(event){
     /* prevent default action for this event */
     event.preventDefault();
     /* make new constant named "clickedElement" and give it the value of "this" */
@@ -128,7 +131,7 @@
     /* make a new constant "tag" and extract tag from the "href" constant */
     const tag = href.replace('#tag-', '');
     /* find all tag links with class active */
-    const activeTagsLinks = document.querySelectorAll('a.active[href^="#tag-"]');
+    const activeTagLinks = document.querySelectorAll('a.active[href^="#tag-"]');
     /* START LOOP: for each active tag link */
     for (let activeTagLink of activeTagLinks) {
       /* remove class active */
@@ -147,7 +150,7 @@
     generateTitleLinks('[data-tags~="' + tag + '"]');
   }
 
-  function addClickListenersToTags() {
+  function addClickListenersToTags(){
     /* find all links to tags */
     const tagLinks = document.querySelectorAll('.post-tags .list a');
     /* START LOOP: for each link */
@@ -158,7 +161,7 @@
     }
   }
   addClickListenersToTags();
-  function generateAuthors() {
+  function generateAuthors(){
     const articles = document.querySelectorAll(optArticleSelector);
     for (let article of articles) {
       const authorWrapper = article.querySelector(optArticleAuthorSelector);
@@ -172,7 +175,7 @@
     }
   }
   generateAuthors();
-  function authorClickHandler(event) {
+  function authorClickHandler(event){
     event.preventDefault();
     const clickedElement = this;
     /*console.log('Link was clicked!');*/
@@ -188,7 +191,7 @@
     }
     generateTitleLinks('[data-author="' + author + '"]');
   }
-  function addClickListenersToAuthors() {
+  function addClickListenersToAuthors(){
     const authorLinks = document.querySelectorAll(optArticleAuthorSelector);
     for (let authorLink of authorLinks) {
       authorLink.addEventListener('click', authorClickHandler);
