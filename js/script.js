@@ -123,8 +123,8 @@
       }
       // console.log(tag + ' is used ' + tags[tag] + ' times');
     }
+    console.log(params);
     return params;
-    // console.log(params);
   }
 
   function calculateTagClass(count, params) {
@@ -316,7 +316,7 @@
       // const authorLinkHTML = '<li><a href="#author-' + authorName + '">'+ authorNameNumber + '</a>';
       // console.log(authorLinkHTML);
       authorsList.innerHTML = templates.authorsList(allAuthorsData);
-      // console.log(allAuthorsData);
+      console.log(allAuthorsData);
     }
   }
 
@@ -356,7 +356,6 @@
     }
     generateTitleLinks('[data-author="' + author + '"]');
   }
-
   //START of addClickListenersToAuthors function
   // find all links to authors-
   // start loop for each author link-
@@ -369,6 +368,5 @@
       authorLink.addEventListener('click', authorClickHandler);
     }
   }
-
   addClickListenersToAuthors();
 }
